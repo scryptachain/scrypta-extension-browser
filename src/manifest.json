@@ -1,7 +1,7 @@
 {
-  "name": "scrypta-id",
+  "name": "ScryptaID",
   "description": "Connect to Scrypta Ecosystem directly from your browser.",
-  "version": null,
+  "version": "1.0.2",
   "manifest_version": 2,
   "icons": {
     "48": "icons/icon_48.png",
@@ -13,10 +13,11 @@
   },
   "permissions": [
     "storage",
-    "activeTab"
+    "activeTab",
+    "*://*.scryptachain.org/*"
   ],
   "content_scripts" : [{
-    "matches" : [ "*://*/*"],
+    "matches" : [ "*://*.scryptachain.org/*" ],
     "js" : ["cookies.js"]
   }]
 }
