@@ -36,7 +36,8 @@ export default {
             app.wallet[app.label] = response.walletstore
             app.localStorage.setItem('$LYRA_ids', JSON.stringify(app.wallet) );
             app.localStorage.setItem('$LYRA_lastid', app.label );
-            app.$router.push('dashboard')
+            app.$router.push('dashboard');
+            app.$emit("onCreatedKey");
           })
         }else{
           alert('This identity exists, please choose another label!')

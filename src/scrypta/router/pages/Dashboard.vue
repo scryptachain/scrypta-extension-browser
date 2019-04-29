@@ -14,7 +14,7 @@
         </b-card>
       </div>
     </div>
-    <div v-else style="text-align:center; margin:20px 0">
+    <div v-if="dapps.length === 0" style="text-align:center; margin:20px 0">
       This identity is unused yet,<br>
       <a style="cursor:pointer" v-on:click="showDappExplorer()">browse dApps now!</a>
     </div>
