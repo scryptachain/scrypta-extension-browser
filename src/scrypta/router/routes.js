@@ -3,6 +3,7 @@ import PageDashboard from './pages/Dashboard'
 import PageExplorer from './pages/Explorer'
 import PageManage from './pages/Manage'
 import PageCreate from './pages/Create'
+import PageImport from './pages/Import'
 
 export default [
   {
@@ -29,5 +30,10 @@ export default [
     path: '/create',
     name: 'create',
     component: PageCreate
+  },
+  {
+    path: '/import',
+    name: 'import',
+    component: PageImport
   }
 ]

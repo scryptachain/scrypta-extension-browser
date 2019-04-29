@@ -112,7 +112,9 @@ export default {
     left:0;
     width:100%;
     padding:0 15px;
-    border-top:1px solid #ccc
+    border-top:1px solid #ccc;
+    background:#fff;
+    z-index:99;
   }
   .buttonbar{
     width:50%;

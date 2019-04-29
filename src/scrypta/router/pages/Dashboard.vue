@@ -4,21 +4,9 @@
       <strong>{{ label }}</strong><br>
       {{ pubkey }}
     </div>
-    <div v-if="dapps">
-      <div v-for="dapp in dapps" v-bind:key="dapp">
-        <b-card class="mb-2 mt-2">
-          <b-card-text>
-            {{ dapp }}
-          </b-card-text>
-          <a style="position:absolute; top:0px; right:10px;" target="_blank" :href="'https://' + dapp" variant="primary"><i class="fa fa-arrow-right"></i></a>
-        </b-card>
-      </div>
-    </div>
-    <div v-if="dapps.length === 0" style="text-align:center; margin:20px 0">
-      This identity is unused yet,<br>
-      <a style="cursor:pointer" v-on:click="showDappExplorer()">browse dApps now!</a>
-    </div>
-    <b-button style="width:100%;" variant="primary" v-on:click="useIdentity">USE THIS IDENTITY</b-button>
+    <b-button style="width:100%; font-size:50px; margin-top:30px" variant="primary" v-on:click="useIdentity">USE THIS<br>IDENTITY</b-button>
+    <b-button v-if="!showRealForget" style="width:100%; margin-top:10px" variant="warning" v-on:click="forgetIdentityConfirm">FORGET IDENTITY</b-button>
+    <b-button v-if="showRealForget" style="width:100%; margin-top:10px" variant="danger" v-on:click="forgetIdentity">I'M 100% SURE, DESTROY ID</b-button>
     
   </div>
 </template>
@@ -31,6 +19,7 @@ export default {
       wallet: '',
       pubkey: '',
       dapps: [],
+      showRealForget: false,
       scrypta: window.ScryptaCore,
       localStorage: window.localStorage
     }
@@ -62,6 +51,22 @@ export default {
           }
         });
       });
+    },
+    forgetIdentityConfirm(){
+      const app = this
+      app.showRealForget = true
+    },
+    forgetIdentity(){
+      const app = this
+      var wallets = localStorage.getItem('$LYRA_ids');
+      wallets = JSON.parse(wallets)
+      delete wallets[app.label]
+      app.localStorage.setItem('$LYRA_ids', JSON.stringify(wallets))
+      app.showRealForget = false
+      for(var key in wallets){
+        app.localStorage.setItem('$LYRA_lastid', key );
+      }
+      app.$router.push('manage')
     }
   },
   mounted (){
