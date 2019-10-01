@@ -14,16 +14,19 @@
   "permissions": [
     "storage",
     "activeTab",
-    "*://*.scryptachain.org/*"
+    "*://*.scryptachain.org/*",
+    "*://*.manent.app/*"
   ],
   "content_scripts": [
     {
       "matches": [
-        "*://*.scryptachain.org/*"
+        "*://*.scryptachain.org/*",
+        "*://*.manent.app/*"
       ],
       "js": [
         "cookies.js"
       ]
     }
-  ]
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
