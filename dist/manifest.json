@@ -1,7 +1,7 @@
 {
   "name": "ScryptaID",
   "description": "Connect to Scrypta Ecosystem directly from your browser.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "manifest_version": 2,
   "icons": {
     "48": "icons/icon_48.png",
@@ -27,6 +27,5 @@
         "cookies.js"
       ]
     }
-  ],
-  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+  ]
 }
