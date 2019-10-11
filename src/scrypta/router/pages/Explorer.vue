@@ -27,17 +27,17 @@ export default {
         {
           name: 'Manent',
           description: 'Scrypta official web wallet, manage you funds and store data.',
-          link: 'manent.scryptachain.org'
+          link: 'web.manent.app'
         },
         {
-          name: 'Contracts',
-          description: 'Create contracts between 2 or more people with few clicks.',
-          link: 'contracts.scryptachain.org'
+          name: 'Proof',
+          description: 'Explore and create Proof of Existence for files on the blockchain.',
+          link: 'proof.scryptachain.org'
         },
         {
-          name: 'Polls',
-          description: 'Polls management dApp for decentralized decisions.',
-          link: 'polls.scryptachain.org'
+          name: 'Me',
+          description: 'Connect third party identities to your account.',
+          link: 'me.scrypta.id'
         },
       ]
     }

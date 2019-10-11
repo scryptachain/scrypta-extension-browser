@@ -1,7 +1,7 @@
 <template>
   <div id="welcomepage">
     <div class="header">
-      <strong>Create new identity</strong>
+      <strong>Import identity</strong>
     </div> 
     <div class="row mt-2">
       <p>

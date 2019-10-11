@@ -80,13 +80,13 @@ p[data-v-481b26ea]{font-size:14px}#welcomepage[data-v-481b26ea]{text-align:cente
 
 p[data-v-05f00e68]{font-size:14px}.card-body[data-v-05f00e68]{padding:0 5px;line-height:35px;height:35px}
 
-p[data-v-68b2cdc4]{font-size:14px;margin-bottom:0px !important}
+p[data-v-fea43164]{font-size:14px;margin-bottom:0px !important}
 
 p[data-v-8de6f240]{font-size:11px;margin-bottom:0px !important}strong[data-v-8de6f240]{font-size:14px}a[data-v-8de6f240]:hover{cursor:pointer !important}.new[data-v-8de6f240]{position:absolute;top:20px;color:#666;right:20px}.new[data-v-8de6f240]:hover{color:#000;cursor:pointer}
 
 p[data-v-527cf532]{font-size:14px}#welcomepage[data-v-527cf532]{text-align:center}#create-id[data-v-527cf532]{width:100%;margin-top:20px}
 
-p[data-v-10689819]{font-size:14px}#welcomepage[data-v-10689819]{text-align:center}#create-id[data-v-10689819]{width:100%;margin-top:20px}
+p[data-v-523cc1d0]{font-size:14px}#welcomepage[data-v-523cc1d0]{text-align:center}#create-id[data-v-523cc1d0]{width:100%;margin-top:20px}
 
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
@@ -563,7 +563,7 @@ mark,
 }
 
 .blockquote-footer::before {
-  content: "\2014\A0";
+  content: "\2014\00A0";
 }
 
 .img-fluid {

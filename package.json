@@ -1,8 +1,8 @@
 {
-  "name": "scrypta-id",
+  "name": "scrypta-id-extension",
   "version": "1.0.3",
   "description": "Connect to Scrypta Ecosystem directly from your browser.",
-  "author": "turinglabs",
+  "author": "Scrypta Task Force",
   "license": "MIT",
   "scripts": {
     "lint": "eslint --ext .js,.vue src",
@@ -30,7 +30,7 @@
     "copy-webpack-plugin": "^4.5.3",
     "core-js": "^2.6.9",
     "cross-env": "^5.2.1",
-    "css-loader": "^0.28.11",
+    "css-loader": "^3.2.0",
     "ejs": "^2.7.1",
     "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",

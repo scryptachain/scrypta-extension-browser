@@ -1,7 +1,7 @@
 {
   "name": "ScryptaID",
   "description": "Connect to Scrypta Ecosystem directly from your browser.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "manifest_version": 2,
   "icons": {
     "48": "icons/icon_48.png",
@@ -15,10 +15,13 @@
     "storage",
     "activeTab",
     "*://*.scryptachain.org/*",
-    "*://*.manent.app/*"
+    "*://*.manent.app/*",
+    "*://*.scrypta.id/*",
+    "*://*.scrypta.me/*",
+    "*://*.localhost:*/*"
   ],
   "content_scripts" : [{
-    "matches" : [ "*://*.scryptachain.org/*" , "*://*.manent.app/*" ],
-    "js" : ["cookies.js"]
+    "matches" : [ "*://*.scryptachain.org/*" , "*://*.manent.app/*" , "*://*.scrypta.id/*", "*://*.scrypta.me/*", "*://*.localhost:*/*" ],
+    "js" : ["storage.js"]
   }]
 }

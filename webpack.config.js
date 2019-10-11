@@ -11,7 +11,7 @@ const config = {
   context: __dirname + '/src',
   entry: {
     'background': './background.js',
-    'cookies': './cookies.js',
+    'storage': './storage.js',
     'scrypta/id': './scrypta/id.js'
   },
   output: {

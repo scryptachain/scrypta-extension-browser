@@ -15,16 +15,22 @@
     "storage",
     "activeTab",
     "*://*.scryptachain.org/*",
-    "*://*.manent.app/*"
+    "*://*.manent.app/*",
+    "*://*.scrypta.id/*",
+    "*://*.scrypta.me/*",
+    "*://*.localhost:*/*"
   ],
   "content_scripts": [
     {
       "matches": [
         "*://*.scryptachain.org/*",
-        "*://*.manent.app/*"
+        "*://*.manent.app/*",
+        "*://*.scrypta.id/*",
+        "*://*.scrypta.me/*",
+        "*://*.localhost:*/*"
       ],
       "js": [
-        "cookies.js"
+        "storage.js"
       ]
     }
   ]
