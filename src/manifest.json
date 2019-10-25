@@ -17,11 +17,10 @@
     "*://*.scryptachain.org/*",
     "*://*.manent.app/*",
     "*://*.scrypta.id/*",
-    "*://*.scrypta.me/*",
-    "*://*.localhost:*/*"
+    "*://*.scrypta.me/*"
   ],
   "content_scripts" : [{
-    "matches" : [ "*://*.scryptachain.org/*" , "*://*.manent.app/*" , "*://*.scrypta.id/*", "*://*.scrypta.me/*", "*://*.localhost:*/*" ],
+    "matches" : [ "*://*.scryptachain.org/*" , "*://*.manent.app/*" , "*://*.scrypta.id/*", "*://*.scrypta.me/*"],
     "js" : ["storage.js"]
   }]
 }

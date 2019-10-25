@@ -17,8 +17,7 @@
     "*://*.scryptachain.org/*",
     "*://*.manent.app/*",
     "*://*.scrypta.id/*",
-    "*://*.scrypta.me/*",
-    "*://*.localhost:*/*"
+    "*://*.scrypta.me/*"
   ],
   "content_scripts": [
     {
@@ -26,8 +25,7 @@
         "*://*.scryptachain.org/*",
         "*://*.manent.app/*",
         "*://*.scrypta.id/*",
-        "*://*.scrypta.me/*",
-        "*://*.localhost:*/*"
+        "*://*.scrypta.me/*"
       ],
       "js": [
         "storage.js"
