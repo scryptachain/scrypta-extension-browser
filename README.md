@@ -6,7 +6,9 @@ Keep updated on Scrypta Ecosystem thanks to dApp Explorer and easily switch from
 
 
 Download it from Chrome Web Store: 
-https://chrome.google.com/webstore/detail/scryptaid/cjlefbjmdddfohdfekbbjefhhjgmmofg?authuser=1
+https://chrome.google.com/webstore/detail/scryptaid/kphclbededgemedgbfgblpmdccjbbhdm
 
+Download it from Firefox Extension Store:
+https://addons.mozilla.org/en-US/firefox/addon/scryptaid/
 
 Enjoy!
