@@ -39,6 +39,16 @@ export default {
           description: 'Connect third party identities to your account.',
           link: 'me.scrypta.id'
         },
+        {
+          name: 'News',
+          description: 'Decentralized News Feed.',
+          link: 'news.scryptachain.org'
+        },
+        {
+          name: 'Planum',
+          description: 'Sidechain layer.',
+          link: 'planum.dev'
+        },
       ]
     }
   },
