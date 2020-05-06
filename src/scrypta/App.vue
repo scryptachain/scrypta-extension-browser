@@ -53,7 +53,7 @@ export default {
   #app{
     min-width:350px;
     width: 100%;
-    min-height: 350px;
+    min-height: 300px;
     padding:20px 20px 70px 20px;
     overflow-y: auto;
     overflow-x: hidden;

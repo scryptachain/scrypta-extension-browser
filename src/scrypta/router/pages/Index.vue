@@ -24,23 +24,23 @@ export default {
       const app = this
       app.$router.push('create');
     },
+
     openimport(){
+      var isFirefox = typeof InstallTrigger !== 'undefined';
+      var tablink
+      if(!isFirefox){
+        let id = chrome.runtime.id
+        tablink = 'chrome-extension://' + id + '/scrypta/id.html#/import'
+      }else{
+        tablink = "./id.html#/import"
+      }
       let createData = {
         type: "panel",
-        url: "id.html#/import",
+        url: tablink,
         width: 500,
         height: 400
       };
-      let creating = browser.windows.create(createData);
-      creating.then(function(){
-        var interval = setInterval(function(){
-          var wallets = localStorage.getItem('$LYRA_ids');
-          if(wallets !== null && wallets.length > 0){
-            clearInterval(interval)
-            app.$router.push('dashboard')
-          }
-        },200)
-      });
+      let creating = browser.windows.create(createData)
     }
   },
   mounted (){
@@ -53,7 +53,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   p {
     font-size: 14px;
   }

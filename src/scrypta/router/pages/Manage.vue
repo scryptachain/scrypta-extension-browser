@@ -39,9 +39,17 @@ export default {
       app.$router.push('create')
     },
     openimport(){
+      var isFirefox = typeof InstallTrigger !== 'undefined';
+      var tablink
+      if(!isFirefox){
+        let id = chrome.runtime.id
+        tablink = 'chrome-extension://' + id + '/scrypta/id.html#/import'
+      }else{
+        tablink = "./id.html#/import"
+      }
       let createData = {
         type: "panel",
-        url: "id.html#/import",
+        url: tablink,
         width: 500,
         height: 400
       };
@@ -75,6 +83,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  #managepage{
+    width:400px;
+  }
   p {
     font-size: 11px;
     margin-bottom:0px!important;

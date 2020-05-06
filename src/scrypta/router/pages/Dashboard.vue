@@ -92,6 +92,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  #welcomepage{
+    width: 400px;
+  }
   p {
     font-size: 14px;
   }

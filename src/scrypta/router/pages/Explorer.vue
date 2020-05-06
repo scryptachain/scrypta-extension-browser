@@ -8,7 +8,7 @@
         <div v-for="dapp in dapps" v-bind:key="dapp">
           <b-card class="mb-2 mt-2">
             <b-card-text>
-              <strong>{{ dapp.name }}</strong>
+              <strong class="dapp-title">{{ dapp.name }}</strong>
               <p>{{ dapp.description }}</p>
             </b-card-text>
             <a class="arrow" target="_blank" :href="'https://' + dapp.link" variant="primary"><i class="fa fa-arrow-right"></i></a>
@@ -26,29 +26,29 @@ export default {
       [
         {
           name: 'Manent',
-          description: 'Scrypta official web wallet, manage you funds and store data.',
+          description: 'Manage you funds and store data.',
           link: 'web.manent.app'
         },
         {
-          name: 'Proof',
-          description: 'Explore and create Proof of Existence for files on the blockchain.',
-          link: 'proof.scryptachain.org'
+          name: 'Me',
+          description: 'Connect third party identities.',
+          link: 'me.scrypta.id'
         },
         {
-          name: 'Me',
-          description: 'Connect third party identities to your account.',
-          link: 'me.scrypta.id'
+          name: 'Planum',
+          description: 'Create tokens with few clicks.',
+          link: 'planum.dev'
+        },
+        {
+          name: 'Electio',
+          description: 'Polls over the blockchain.',
+          link: 'electio.app'
         },
         {
           name: 'News',
           description: 'Decentralized News Feed.',
           link: 'news.scryptachain.org'
-        },
-        {
-          name: 'Planum',
-          description: 'Sidechain layer.',
-          link: 'planum.dev'
-        },
+        }
       ]
     }
   },
@@ -65,8 +65,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .dapp-title { font-size: 18px;}
   p {
-    font-size: 14px;
+    font-size: 12px;
     margin-bottom:0px!important
+  }
+  #explorerpage{
+    width:400px;
   }
 </style>
