@@ -15,7 +15,6 @@
         drop-placeholder="Drop .sid here..."
         @change="loadWalletFromFile"
       ></b-form-file>
-      <b-button id="create-id" variant="primary" v-on:click="createIdentity()">CREATE IDENTITY</b-button>
     </div>
   </div>
 </template>
