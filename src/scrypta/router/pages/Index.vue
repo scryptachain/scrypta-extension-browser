@@ -4,7 +4,7 @@
     <div class="row">
       <p style="width:100%;">With this extension you will be able to store and manage your identities and use it directly into Scrypta dApps Ecosystem.</p>
     </div>
-    <div style="position:absolute; bottom: 0; padding:20px; right:0; width:100%">
+    <div style="margin-top:20px">
       <b-button id="create-id" variant="primary" v-on:click="showCreateIdentity()">CREATE IDENTITY</b-button>
       <b-button style="width:100%; margin-top:10px" variant="success" v-on:click="openimport()">IMPORT IDENTITY</b-button>
     </div>
