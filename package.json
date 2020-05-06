@@ -1,6 +1,6 @@
 {
   "name": "scrypta-id-extension",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Connect to Scrypta Ecosystem directly from your browser.",
   "author": "Scrypta Task Force",
   "license": "MIT",
@@ -10,15 +10,19 @@
     "build:dev": "cross-env NODE_ENV=development webpack --hide-modules",
     "build-zip": "node scripts/build-zip.js",
     "watch": "npm run build -- --watch",
-    "watch:dev": "cross-env HMR=true npm run build:dev -- --watch"
+    "watch:dev": "cross-env HMR=true npm run build:dev -- --watch",
+    "dev": "npm run build -- --watch && web-ext run --source-dir ./dist/"
   },
   "dependencies": {
+    "@scrypta/core": "^1.6.9",
     "axios": "^0.18.1",
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.2",
     "vue": "^2.6.10",
+    "vue-password-strength-meter": "^1.7.2",
     "vue-router": "^3.1.3",
-    "webextension-polyfill": "^0.3.1"
+    "webextension-polyfill": "^0.3.1",
+    "zxcvbn": "^4.4.2"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
@@ -47,6 +51,7 @@
     "sass-loader": "^7.3.1",
     "vue-loader": "^15.7.1",
     "vue-template-compiler": "^2.6.10",
+    "web-ext": "^4.2.0",
     "web-ext-types": "^2.1.0",
     "webpack": "^4.41.0",
     "webpack-chrome-extension-reloader": "^0.8.3",

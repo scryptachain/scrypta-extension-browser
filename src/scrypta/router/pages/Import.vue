@@ -43,7 +43,7 @@ export default {
                 app.wallet[app.label] = dataKey
                 app.localStorage.setItem('$LYRA_ids', JSON.stringify(app.wallet) );
                 app.localStorage.setItem('$LYRA_lastid', app.label );
-                app.$router.push('dashboard');
+                window.close()
             };
             reader.readAsText(file);
           }else{

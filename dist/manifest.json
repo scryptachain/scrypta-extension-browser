@@ -1,7 +1,7 @@
 {
-  "name": "ScryptaID",
+  "name": "scrypta-extension-browser",
   "description": "Connect to Scrypta Ecosystem directly from your browser.",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "manifest_version": 2,
   "icons": {
     "48": "icons/icon_48.png",
@@ -18,7 +18,8 @@
     "*://*.manent.app/*",
     "*://*.scrypta.id/*",
     "*://*.planum.dev/*",
-    "*://*.scrypta.me/*"
+    "*://*.scrypta.me/*",
+    "*://*.electio.app/*"
   ],
   "content_scripts": [
     {
@@ -27,7 +28,8 @@
         "*://*.manent.app/*",
         "*://*.scrypta.id/*",
         "*://*.scrypta.me/*",
-        "*://*.planum.dev/*"
+        "*://*.planum.dev/*",
+        "*://*.electio.app/*"
       ],
       "js": [
         "storage.js"

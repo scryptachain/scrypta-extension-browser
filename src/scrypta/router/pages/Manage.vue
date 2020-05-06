@@ -16,9 +16,7 @@
           </b-card>
         </div>
       </div>
-      <a target="_blank" :href="openlink"><b-button style="width:100%;" variant="success">IMPORT IDENTITY</b-button></a><!--
-      <b-button style="width:100% ;" class="mb-2" variant="primary" v-on:click="backupIdentities()">MAKE BACKUP</b-button>
-      <b-button style="width:100%;" variant="success" v-on:click="importIdentities()">IMPORT IDENTITIES</b-button>-->
+      <b-button variant="success" style="width:100%" v-on:click="openimport">IMPORT IDENTITY</b-button>
   </div>
 </template>
 
@@ -29,8 +27,6 @@ export default {
       wallets: [],
       scrypta: window.ScryptaCore,
       localStorage: window.localStorage,
-      id: '',
-      openlink: ''
     }
   },
   methods: {
@@ -42,6 +38,15 @@ export default {
       const app = this
       app.$router.push('create')
     },
+    openimport(){
+      let createData = {
+        type: "panel",
+        url: "id.html#/import",
+        width: 500,
+        height: 400
+      };
+      let creating = browser.windows.create(createData);
+    },
     useIdentity(label){
       const app = this
       app.localStorage.setItem('$LYRA_lastid', label)
@@ -50,8 +55,6 @@ export default {
   },
   mounted (){
     const app = this
-    app.id = chrome.runtime.id
-    app.openlink = 'chrome-extension://' + app.id + '/scrypta/id.html#/import'
     var wallets = localStorage.getItem('$LYRA_ids');
     wallets = JSON.parse(wallets);
     if(wallets === null || wallets.length === 0){

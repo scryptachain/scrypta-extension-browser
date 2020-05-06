@@ -25,7 +25,7 @@ export default {
   mounted (){
     const app = this
     app.id = chrome.runtime.id
-    app.openlink = 'chrome-extension://' + app.id + '/scrypta/id.html'
+    app.openlink = 'moz-extension://' + app.id + '/scrypta/id.html'
     var wallet = localStorage.getItem('$LYRA_ids');
     if(wallet === null || wallet.length === 0){
       app.showbar = false
