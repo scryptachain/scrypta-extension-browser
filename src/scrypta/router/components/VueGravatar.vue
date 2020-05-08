@@ -55,8 +55,16 @@
 
     computed: {
       url() {
+        var protocol = this.protocol.slice(-1) === ':'
+          ? this.protocol
+          : `${this.protocol}:`;
+
+        if(protocol !== 'http:' && protocol !== 'https:'){
+          protocol = 'https:'
+        }
+
         const img = [
-          `https://gravatar.com/avatar/`,
+          `${protocol === ':' ? '' : protocol}//www.gravatar.com/avatar/`,
           this.hash || md5(this.email.trim().toLowerCase()),
           `?s=${this.size}`,
           `&d=${this.defaultImg}`,
