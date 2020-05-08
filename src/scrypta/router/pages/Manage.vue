@@ -9,6 +9,7 @@
         <div v-for="wallet in wallets" v-bind:key="wallet.pubkey">
           <b-card class="mb-2 mt-2">
             <b-card-text>
+              <v-gravatar :email="wallet.pubkey" style="float:left; width:40px; height:40px; margin-right:10px; border-radius:4px;" />
               <strong>{{ wallet.label }}</strong>
               <p>{{ wallet.pubkey }}</p>
             </b-card-text>

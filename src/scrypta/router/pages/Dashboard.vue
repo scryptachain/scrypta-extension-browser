@@ -1,17 +1,26 @@
 <template>
   <div id="welcomepage">
-    <div class="header">
+    <div class="header" style="text-align:left; position:relative">
+      <v-gravatar :email="pubkey" style="float:left; width:38px; height:38px; margin-right:10px; border-radius:4px;" />
       <strong>{{ label }}</strong><br>
-      {{ pubkey }}
+      {{ pubkey.substr(0,4) }}...{{ pubkey.substr(-4) }}
+      <div style="position:absolute; top:0; right:0; text-align:right; width:150px;">
+        <strong>Balance</strong><br>
+        {{ balance }} LYRA
+      </div>
     </div>
-    <b-button style="width:100%; font-size:50px; margin-top:30px" variant="primary" v-on:click="useIdentity">USE THIS<br>IDENTITY</b-button>
-    <b-button v-if="!showRealForget" style="width:100%; margin-top:10px" variant="warning" v-on:click="forgetIdentityConfirm">FORGET IDENTITY</b-button>
+    <b-button style="width:100%; font-size:50px; margin-top:15px" variant="primary" v-on:click="useIdentity">USE THIS<br>IDENTITY</b-button>
+    <hr>
+    <b-button v-if="!showRealForget" style="width:100%; margin-top:0px" variant="warning" v-on:click="forgetIdentityConfirm">FORGET IDENTITY</b-button>
     <b-button v-if="showRealForget" style="width:100%; margin-top:10px" variant="danger" v-on:click="forgetIdentity">I'M 100% SURE, DESTROY ID</b-button>
-    
+    <b-button style="width:100%; margin-top:10px" variant="success" v-on:click="downloadWallet">BACKUP .SID FILE</b-button>
+    <a id="downloadsid" style="display:none"></a>
   </div>
 </template>
 
 <script>
+const axios = require('axios')
+
 export default {
   data () {
     return {
@@ -19,9 +28,11 @@ export default {
       wallet: '',
       pubkey: '',
       dapps: [],
+      balance: "-",
       showRealForget: false,
       scrypta: window.ScryptaCore,
-      localStorage: window.localStorage
+      localStorage: window.localStorage,
+      axios: axios
     }
   },
   methods: {
@@ -67,9 +78,28 @@ export default {
         app.localStorage.setItem('$LYRA_lastid', key );
       }
       app.$router.push('manage')
+    },
+    downloadWallet() {
+      if (this.wallet !== "") {
+        var a = document.getElementById("downloadsid");
+        var file = new Blob(
+          [this.pubkey + ":" + this.wallet],
+          { type: "sid" }
+        );
+        a.href = URL.createObjectURL(file);
+        a.download = this.pubkey + ".sid";
+        var clickEvent = new MouseEvent("click", {
+          view: window,
+          bubbles: true,
+          cancelable: false
+        });
+        a.dispatchEvent(clickEvent);
+      } else {
+        alert("Need a wallet first");
+      }
     }
   },
-  mounted (){
+  async mounted (){
     const app = this
     var wallet = localStorage.getItem('$LYRA_ids');
     wallet = JSON.parse(wallet);
@@ -86,6 +116,10 @@ export default {
         dapps = JSON.parse(dapps)
         app.dapps = dapps[app.pubkey]
       }
+      // let node = await app.scrypta.connectNode()
+      let node = "https://idanodejs01.scryptachain.org"
+      let response = await app.axios.get(node + "/balance/" + app.pubkey)
+      app.balance = response.data.balance 
     }
   }
 }

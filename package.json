@@ -1,6 +1,6 @@
 {
   "name": "scrypta-id-extension",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Connect to Scrypta Ecosystem directly from your browser.",
   "author": "Scrypta Task Force",
   "license": "MIT",
@@ -13,11 +13,11 @@
     "watch:dev": "cross-env HMR=true npm run build:dev -- --watch"
   },
   "dependencies": {
-    "@scrypta/core": "^1.6.9",
     "axios": "^0.18.1",
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.2",
     "vue": "^2.6.10",
+    "vue-gravatar": "^1.3.1",
     "vue-password-strength-meter": "^1.7.2",
     "vue-router": "^3.1.3",
     "webextension-polyfill": "^0.3.1",
